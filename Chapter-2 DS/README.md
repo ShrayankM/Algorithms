@@ -1,2 +1,1 @@
-# C3-DS
-Data Structures in C++
+# Data Structures in C++ using STL
