@@ -69,3 +69,13 @@ int main(){
     printf("Maximum sum of submatrix: %d\n",maxSumSubMatrix());
     return 0;
 }
+
+//Input File
+/*
+6 6
+1 7 12 10 1 0
+11 7 -10 1 3 13
+-2 9 -5 2 4 7
+4 14 -9 3 13 -6
+-7 -8 -9 12 6 4
+2 -13 10 11 8 7*/
