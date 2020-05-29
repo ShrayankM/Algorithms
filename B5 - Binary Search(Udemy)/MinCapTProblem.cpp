@@ -56,3 +56,9 @@ in the order they are given. Sum of the weights of the boxes can't exceed C.
 Find the minimum capacity C such that we can move all boxes using maximum K transports.else
 
 Example: N = 6, K = 3, G[] = [7, 3, 2, 3, 1, 4] Answer:8 */
+
+//Input File
+/*
+6 3
+7 3 2 3 1 4
+*/
