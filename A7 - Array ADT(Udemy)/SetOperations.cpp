@@ -1,0 +1,36 @@
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+
+pair<int*, int> Union(int A[], int NA, int B[], int NB){
+    int* C = new int[NA + NB];
+    sort(A, A + NA); sort(B, B + NB);
+    int i, j; int k = 0;
+    for(i = 0, j = 0; i < NA, j < NB; j++, i++){
+        if(A[i] == A[j])
+            C[k++] = A[i];
+        else{
+            C[k++] = A[i]; C[k++] = A[j];
+        }
+    }
+    while(i < NA)
+        C[k++] = A[i++];
+    while(j < NB)
+        C[k++] = A[j++];
+    return make_pair(C, k);
+}
+int main(){
+    int A[] = {1, 5, 3, 6, 2, 9, 13, 25, 34, 39, 44, 48}; int NA = 12;
+    int B[] = {1, 6, 3, 44, 34, 9, 2, 48}; int NB = 8;
+
+    //Set Union
+    pair<int*, int>C;
+    C = Union(A, NA, B, NB);
+    for(int i = 0; i < C.second; i++)
+        printf("%d ", C.first[i]);
+    printf("\n");
+
+    //Set Intersection
+    
+    return 0;
+}
