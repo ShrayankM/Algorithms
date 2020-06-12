@@ -4,11 +4,12 @@ using namespace std;
 
 struct Array{
     int* A; int size; int length;
-    Array(int size){
-        A = new int[size];
+    Array(int s){
+        size = s;
+        A = new int[s];
     }
     void displayArray(){
-        printf("Elements of Array: Length = (%d) ", length);
+        printf("Elements of Array, Length = (%d), Size = (%d) ", length, size);
         for(int i = 0; i < length; i++)
             printf("%d ", A[i]);
         printf("\n");
@@ -93,6 +94,30 @@ struct Array{
         }
         displayArray();
     }
+    void increaseSize(int s){
+        int* B = new int[size * s];
+        size = size * s;
+        for(int i = 0; i < length; i++)
+            B[i] = A[i];
+        *A = *B;
+        free(B);
+    }
+    void sortedCheck(){
+        bool flag = true;
+        for(int i = 0; i < length - 1; i++)
+            if(A[i] > A[i + 1])
+                flag = false;
+        if(flag)
+            printf("Sorted\n");
+        else
+            printf("Not Sorted\n");
+    }
+
+    void mergeArray(int B[], int N){
+        for(int j = 0, i = length; j < N; j++, i++)
+            A[i] = B[j];
+        length = length + N;
+    }
 };
 int main(){
     struct Array arr(20);
@@ -115,8 +140,15 @@ int main(){
     //arr.BinarySearch(4);
     //arr.BinarySearch(15);
     //arr.displayArray();
+    arr.increaseSize(2);
     arr.reverse();
     arr.rotateL(2);
     arr.rotateR(2);
+    sort(arr.A, arr.A + arr.length);
+    arr.sortedCheck();
+
+    int B[] = {100, 104, 111, 134, 145, 199, 172}; int NB = 7;
+    arr.mergeArray(B, NB);
+    arr.displayArray();
     return 0;
 }
