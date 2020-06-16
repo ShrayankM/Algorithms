@@ -17,6 +17,7 @@ void display(int A[], int N){
         printf("%d ", A[i]);
     printf("\n");
 }
+
 int main(){
     int A[] = {45, 4, 67, 12, 78, 3, 2, 16, 21, 79, 78, 45, 64, 55};
     int N = 14;
