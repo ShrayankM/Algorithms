@@ -30,12 +30,12 @@ void merge(int A[], int L, int M, int H){
 }
 
 void mergeSort(int A[], int L, int H){
-    if(L < H){
+        if(L == H)
+            return;
         int M = (L + H)/2;
         mergeSort(A, L, M);
         mergeSort(A, M + 1, H);
         merge(A, L, M, H);
-    }
 }
 
 void display(int A[], int N){

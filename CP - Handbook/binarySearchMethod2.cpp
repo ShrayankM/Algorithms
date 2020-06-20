@@ -23,6 +23,7 @@ void display(int A[], int N){
 }
 int main(){
     int A[] = {45, 4, 67, 12, 78, 3, 2, 16, 21, 79, 78, 45, 64, 55};
+    //int A[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     int N = sizeof(A)/sizeof(int);
     int X;
     cin >> X;
