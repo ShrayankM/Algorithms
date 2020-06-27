@@ -118,6 +118,15 @@ struct Array{
             A[i] = B[j];
         length = length + N;
     }
+
+    void find_min_max(){
+        int _min = A[0], _max = A[0];
+        for(int i = 1; i < length - 1; i++){
+            _max = max(_max, A[i]);
+            _min = min(_min, A[i]);
+        }
+        printf("_Max_value: %d, _Min_value: %d\n", _max, _min);
+    }
 };
 int main(){
     struct Array arr(20);
@@ -150,5 +159,7 @@ int main(){
     int B[] = {100, 104, 111, 134, 145, 199, 172}; int NB = 7;
     arr.mergeArray(B, NB);
     arr.displayArray();
+
+    arr.find_min_max();
     return 0;
 }
