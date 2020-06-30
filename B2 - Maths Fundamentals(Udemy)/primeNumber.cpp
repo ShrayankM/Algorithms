@@ -11,7 +11,9 @@ bool isPrime(int N){
     }
     return true;
 }
-//O(sqrt(N)) time complexity
+/** 
+ * * O(sqrt(N)) time complexity 
+ */
 bool isPrimeSqrt(int N){
     if(N == 0 || N == 1)
         return false;
@@ -27,3 +29,10 @@ int main(){
     printf("%d\n",isPrimeSqrt(N));
     return 0;
 }
+
+/** 
+ * TODO : refactor this method
+ * ? Should this loop end here ? 
+ * ! This method is deprecated
+ * * Important information
+*/

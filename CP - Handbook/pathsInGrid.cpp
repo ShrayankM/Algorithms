@@ -18,12 +18,24 @@ void display(){
         printf("\n");
     }
 }
+
+//Recursive call
+int sum_N_N(int x, int y){
+    if(x == 0 || y == 0)
+        return 0;
+    return max(sum_N_N(x - 1, y), sum_N_N(x, y - 1)) + A[x][y];
+}
 int main(){
+
+    //Iterative Method
     for(int i = 1; i <= N; i++)
         for(int j = 1; j <= N; j++)
             sum[i][j] = max(sum[i - 1][j], sum[i][j - 1]) + A[i][j];
     
     display();
     printf("%d\n", sum[N][N]);
+
+    //Recursive
+    printf("%d\n", sum_N_N(N, N));
     return 0;
 }
