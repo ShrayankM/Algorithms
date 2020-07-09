@@ -37,6 +37,30 @@ void find_duplicatesHash(char s[]){
     }
 }
 
+void find_duplicatesMask(char s[]){
+    int HU = 0, HL = 0;
+    for(int i = 0; s[i] != '\0'; i++){
+        if(s[i] != ' '){
+            if(s[i] >= 'a' && s[i] <= 'z'){
+                int x = 1;
+                x = (x << (s[i] - 97));
+                if((x & HL) != 0)
+                    printf("Duplicate of %c found:\n", s[i]);
+                else
+                    HL = x | HL;
+            }
+            else{
+                int x = 1;
+                x = (x << (s[i] - 65));
+                if((x & HU) != 0)
+                    printf("Duplicate of %c found:\n", s[i]);
+                else
+                    HU = x | HU;
+            }
+        }
+    }
+}
+
 int main(){
     char s[] = "Basics of String Operations Finding Duplicates";
     /** 
@@ -48,5 +72,12 @@ int main(){
      * ? TC of find_duplicatesHash is O(2N) where N is length of String 
      * */
     find_duplicatesHash(s);
+
+    /** 
+     * TODO finding duplicates using bitmasking and bitmerging 
+     * ? TC of find_duplicatesMask is O(N) where N is length of string
+     * */
+
+    find_duplicatesMask(s);
     return 0;
 }
