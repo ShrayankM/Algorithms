@@ -14,7 +14,7 @@ void findNearest(int n){
             continue;
         }
         else if(S.top().first > A[i]){
-            while(S.top().first > A[i] || S.empty()){
+            while(!S.empty() && S.top().first > A[i]){
                 int a = S.top().first; int index = S.top().second; 
                 S.pop();
                 N[index] = A[i];
