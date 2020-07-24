@@ -88,20 +88,18 @@ struct DLL{
         free(temp); 
     }
 
-    void reverse(struct Node* q, struct Node* p){
-        if(p != NULL)
-            reverse(p, p->next);
-        else if(p == tail){
-            head = p;
-            p->next = q;
-            p->prev = NULL;
-            return;
+    void reverse(){
+        struct Node* p = head;
+        tail = head;
+        while(p){
+            struct Node* temp;
+            temp = p->next;
+            p->next = p->prev;
+            p->prev = temp;
+            if(p->prev == NULL)
+                head = p;
+            p = p->prev;   
         }
-        p->prev = p->next;
-        p->next = q;
-        /*if(q == NULL){
-            tail = q;
-        }*/
 
     }
 };
@@ -124,7 +122,7 @@ int main(){
     L.deleteNode(8);
     L.display();
 
-    L.reverse(NULL, L.head);
+    L.reverse();
     L.display();
     return 0;
 }
