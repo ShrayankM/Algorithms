@@ -36,6 +36,22 @@ struct CircularDLL{
         tail = n;
     }
 
+    void reverse(){
+        struct Node* p = head;
+        tail = head;
+        while(true){
+            struct Node* temp;
+            temp = p->next;
+            p->next = p->prev;
+            p->prev = temp;
+            if(p->prev == head){
+                head = p;
+                break;
+            }
+            p = p->prev;   
+        }
+    }
+
     void display(){
         struct Node* t = head;
         do{
@@ -52,6 +68,8 @@ int main(){
     int N = sizeof(A)/sizeof(int);
     for(int i = 0; i < N; i++)
         L.create(A[i]);
+    L.display();
+    L.reverse();
     L.display();
     return 0;
 }
