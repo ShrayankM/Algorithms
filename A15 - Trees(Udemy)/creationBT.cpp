@@ -51,23 +51,6 @@ struct BT{
             preorder(t->R);
         }
     }
-
-    void preorderIterative(){
-        stack<Node*>st;
-        struct Node* t = root;
-        while(t != NULL || !st.empty()){
-            if(t != NULL){
-                printf("%d ", t->data);
-                st.push(t);
-                t = t->L;
-            }
-            else{
-                t = st.top(); st.pop();
-                t = t->R;
-            }
-        }
-        printf("\n");
-    }
 };
 
 int main(){
@@ -75,6 +58,5 @@ int main(){
     tree.create();
     tree.preorder(tree.root);
     printf("\n");
-    tree.preorderIterative();
     return 0;
 }
