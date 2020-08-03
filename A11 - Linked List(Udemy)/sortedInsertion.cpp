@@ -51,7 +51,7 @@ struct LinkedList{
         T->next = n;
     }
     /**
-     * ? BubbleSort 
+     * ? Iterative Sorting
      * */
     void sorting(){
         struct Node* i = head;

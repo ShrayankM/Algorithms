@@ -38,39 +38,39 @@ struct LinkedList{
     }
 };
 
-void mergeLL(struct Node* f, struct Node* s){
+void mergeLL(struct Node* first, struct Node* second){
     struct Node* T; struct Node* L;
-    if(f->data < s->data){
-        T = f; L = f;
-        f = f->next; L->next = NULL;
+    if(first->data < second->data){
+        T = first; L = first;
+        first = first->next; L->next = NULL;
     }
     else{
-        T = s; L = s;
-        s = s->next; L->next = NULL;
+        T = second; L = second;
+        second = second->next; L->next = NULL;
     }
-    while(f != NULL && s != NULL){
-        if(f->data < s->data){
-            L->next = f;
-            L = f;
-            f = f->next;
+    while(first != NULL && second != NULL){
+        if(first->data < second->data){
+            L->next = first;
+            L = first;
+            first = first->next;
             L->next = NULL;
         }
         else{
-            L->next = s;
-            L = s;
-            s = s->next;
+            L->next = second;
+            L = second;
+            second = second->next;
             L->next = NULL;
         }
     }
-    while(f != NULL){
-        L->next = f;
-        L = f;
-        f = f->next;
+    while(first != NULL){
+        L->next = first;
+        L = first;
+        first = first->next;
     }
-    while(s != NULL){
-        L->next = s;
-        L = s;
-        s = s->next;
+    while(second != NULL){
+        L->next = second;
+        L = second;
+        second = second->next;
     }
     struct LinkedList FL;
     FL.head = T; FL.tail = L;
