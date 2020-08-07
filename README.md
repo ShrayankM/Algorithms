@@ -1,2 +1,2 @@
-# CP3
-Competitive Programming 3 
+# Algorithms
+<i>Datastructures and Algorithms in C++</i>
