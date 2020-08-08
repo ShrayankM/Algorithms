@@ -30,10 +30,18 @@ struct Heap{
             heapify(i);
     }
 
+    void insert(int pos, int key){
+        while(pos > 1 && key > A[pos/2]){
+            A[pos] = A[pos/2];
+            pos = pos/2;
+        }
+        A[pos] = key;
+    }
+
     void insert(int key){
         A.push_back(key);
         N++;
-        heapify();
+        insert(N, key);
     }
 
     void deleteNode(){
@@ -57,7 +65,7 @@ struct Heap{
 
 int main(){
 
-    int A[] = {-1, 45, 6, 23, 8, 19, 16, 45, 23, 1, 9};
+    int A[] = {-1, 45, 6, 23, 8, 19, 16, 45, 23, 1, 9, 67};
     int N = sizeof(A)/sizeof(int);
 
 
