@@ -57,14 +57,19 @@ struct SegmentTree{
         return find(right(p), (L + R)/2 + 1, R, index);
     }
 
-    void update(int A[], int index, int key){
-        int L = 0, R = N - 1;
-        int p = find(1, 0, N - 1, index);
-        while(p > 1 && A[st[p]] >= A[st[p/2]]){
-            st[p/2] = st[p];
-            p = p/2;
-        }
-    }
+	void update(int A[], int index, int key, int p, int L, int R){
+		if(L == R && L == index){
+			A[index] = key;
+			return;
+		}
+		if(index >= L && index <= (L + R)/2)
+			update(A, index, key, left(p), L, (L + R)/2);
+		else
+			update(A, index, key, right(p), (L + R)/2 + 1, R);
+		
+		int p1 = st[left(p)]; int p2 = st[right(p)];
+		st[p] = (A[p1] >= A[p2]) ? p1 : p2;
+	}
 };
 
 int main(){
@@ -78,10 +83,8 @@ int main(){
     cout << A[t.RMQ(A, 1, 4)] << "\n";
     cout << A[t.RMQ(A, 0, 11)] << "\n";
 
-    //A[1] = 80; 
-    A[4] = 180;
-    //t.update(A, 1, 80);
-    t.update(A, 4, 180);
+    t.update(A, 4, 180, 1, 0, N - 1);
+	t.update(A, 6, 380, 1, 0, N - 1);
     cout << A[t.RMQ(A, 0, 11)] << "\n";
     return 0;
 }
