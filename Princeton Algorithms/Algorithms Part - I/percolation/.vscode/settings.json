@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/jackson/GitHub/Algorithms Part - I/percolation/**/*.jar"
+    ]
+}

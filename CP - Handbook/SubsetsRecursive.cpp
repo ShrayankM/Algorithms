@@ -17,7 +17,7 @@ void generateSubset(int K, int N){
     generateSubset(K + 1, N);
 }
 int main(){
-    int N = 4;
+    int N = 10;
     generateSubset(1, N);
     printf("Total Subsets: %d\n", count);
     return 0;
