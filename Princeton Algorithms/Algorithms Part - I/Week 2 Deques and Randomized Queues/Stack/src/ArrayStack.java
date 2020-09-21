@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class ArrayStack<Item> implements Iterable<Item> {
     private Item [] array;
@@ -16,6 +17,8 @@ public class ArrayStack<Item> implements Iterable<Item> {
     }
 
     public Item pop() {
+        if (N == 0)
+            throw new NoSuchElementException();
         if (N > 0 && N == array.length/4)
             resize(array.length/2);
         return array[--N];
@@ -49,6 +52,12 @@ public class ArrayStack<Item> implements Iterable<Item> {
 
     public static void main(String args[]) {
         ArrayStack<Integer> stack = new ArrayStack<Integer>();
+        try {
+            stack.pop();
+        }
+        catch (NoSuchElementException e) {
+            System.out.println("No element found in stack!!!");
+        }
         for (int i = 1; i <= 10; i++) {
             stack.push(i * 10);
         }

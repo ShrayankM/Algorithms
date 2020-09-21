@@ -1,5 +1,6 @@
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class ListStack<Item> implements Iterable<Item> {
 
@@ -24,6 +25,8 @@ public class ListStack<Item> implements Iterable<Item> {
     }
 
     public Item pop() {
+        if (first == null)
+            throw new NoSuchElementException();
         Item temp = first.data;
         first = first.next;
         return temp;
@@ -52,6 +55,15 @@ public class ListStack<Item> implements Iterable<Item> {
 
     public static void main(String args[]) {
         ListStack<String> stack = new ListStack<String>();
+        stack.push("FIRST");
+        stack.pop();
+//        stack.push("SECOND");
+        try{
+            stack.pop();
+        }
+        catch(NoSuchElementException e) {
+            System.out.println("No element found in stack!!!");
+        }
         for (int i = 1; i <= 10; i++) {
             stack.push(String.valueOf(i) + " * 10 = " + String.valueOf(i * 10) );
         }
