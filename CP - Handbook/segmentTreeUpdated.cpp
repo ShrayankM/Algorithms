@@ -2,10 +2,10 @@
 using namespace std;
 
 struct SegmentTree{
-    int st[25]; int size; int N;
+    int *st; int size; int N;
     SegmentTree(int N){
         this->N = N;
-        //st = new int[4 * N + 1];
+        st = new int[4 * N + 1];
         size = 4 * N;
     }
 
