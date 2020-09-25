@@ -1,2 +1,2 @@
 # Algorithms
-<i>Datastructures and Algorithms in C++</i>
+<i>Datastructures and Algorithms in C++ and Java </i>
