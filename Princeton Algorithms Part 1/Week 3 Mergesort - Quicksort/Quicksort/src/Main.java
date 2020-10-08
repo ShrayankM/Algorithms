@@ -1,19 +1,25 @@
 public class Main {
 
+    public static void display(Comparable [] a) {
+        for (int i = 0; i < a.length; i++)
+            System.out.print(a[i] + " ");
+        System.out.println();
+    }
+
     public static void main(String[] args) {
-//        Quicksort q = new Quicksort();
-//        int a[] = {12, 6, 23, 6, 7, 11, 9, 3, 45, 32, 16, 8};
-//        q.sort(a);
-//        q.display(a);
-
-        QuicksortGeneric q = new QuicksortGeneric();
-        Integer a[] = {12, 6, 23, 6, 7, 11, 9, 3, 45, 32, 16, 8};
-//        Integer a[] = {1, 2, 3, 4, 5, 6, 7};
+        QuicksortNew q = new QuicksortNew();
+        Integer [] a = {34, 56, 9, 12, 78, 23, 78, 9, 10, 10, 45, 10};
+        Integer [] b = {34, 56, 9, 12, 78, 23, 78, 9, 10, 10, 45, 10};
         q.sort(a);
-        q.display(a);
+        display(a);
 
-        Float b[] = {1.2F, 3.4F, 12.6F, 78F, 15.66F, 14.66F};
-        q.sort(b);
-        q.display(b);
+        SelectionK s = new SelectionK();
+        System.out.println(s.select(b, 4));
+
+        Integer [] c = {34, 56, 9, 12, 78, 23, 78, 9, 5, 7, 45, 10, 10, 56};
+        threeWaySort t = new threeWaySort();
+        t.sort(c);
+        display(c);
+
     }
 }
