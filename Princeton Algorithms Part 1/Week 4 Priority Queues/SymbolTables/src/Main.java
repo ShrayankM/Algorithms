@@ -7,6 +7,23 @@ public class Main {
         for (int i = 0; i < arr.length; i++) {
             bst.insert(arr[i], i);
         }
-        bst.inorder();
+
+        for (Integer i : bst.keys()) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+//        bst.inorder();
+        System.out.println("Floor of " + 13 + " " + bst.floor(13));
+        System.out.println("Ceil of " + 13 + " " + bst.ceil(13));
+
+        System.out.println(bst.size());
+        System.out.println(bst.rank(34));
+
+        bst.delete(54);
+        bst.delete(23);
+        System.out.println(bst.rank(34));
+        for (Integer i : bst.keys()) {
+            System.out.print(i + " ");
+        }
     }
 }
