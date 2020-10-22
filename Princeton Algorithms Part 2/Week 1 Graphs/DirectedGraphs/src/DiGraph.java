@@ -50,6 +50,8 @@ public class DiGraph {
                 rv.adj[w].insert(i);
             }
         }
+        rv.vertices = this.vertices;
+        rv.edges = this.edges;
         return rv;
     }
 

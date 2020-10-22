@@ -1,5 +1,6 @@
+import edu.princeton.cs.algs4.Stack;
 import java.util.Arrays;
-import java.util.Stack;
+
 
 public class TopologicalOrder {
 
@@ -34,10 +35,7 @@ public class TopologicalOrder {
         }
     }
 
-    void  tOrder() {
-        while (!order.empty()) {
-            int temp = order.pop();
-            System.out.print(temp + " ");
-        }
+    Iterable<Integer> tOrder() {
+        return order;
     }
 }
