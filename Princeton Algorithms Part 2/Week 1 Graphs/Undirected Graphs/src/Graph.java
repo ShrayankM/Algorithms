@@ -40,6 +40,13 @@ public class Graph {
         adj[w].insert(v);
     }
 
+    // remove an edge v - w
+    public void removeEdge(int v, int w) {
+        this.edges--;
+        adj[v].update(w, -1);
+        adj[w].update(v, -1);
+    }
+
     // vertices adjacent to v
     public Iterable<Integer> adj(int v) {
         return adj[v];
@@ -53,6 +60,11 @@ public class Graph {
     // number of edges
     public int E() {
         return edges;
+    }
+
+    // degree of a vertex
+    public int degree(int v) {
+        return adj[v].count();
     }
 
     // String Representation
