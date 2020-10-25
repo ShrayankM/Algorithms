@@ -1,5 +1,4 @@
 import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.MinPQ;
 import edu.princeton.cs.algs4.Queue;
 
 public class KruskalAlgorithm {
@@ -7,6 +6,7 @@ public class KruskalAlgorithm {
     private Queue<Edge> mst;
     private EdgeWeightedGraph G;
     private UnionFind UF;
+//    private MinPQ<Edge> pq;
     private MinPQ<Edge> pq;
     private double cost = 0.0;
 

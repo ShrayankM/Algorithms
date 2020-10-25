@@ -1,9 +1,7 @@
 import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.MinPQ;
 import edu.princeton.cs.algs4.Queue;
 
 import java.util.Arrays;
-import java.util.Iterator;
 
 public class PrimsLazy {
 
