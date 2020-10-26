@@ -21,7 +21,7 @@ public class KruskalAlgorithm {
 
         while (!pq.isEmpty()) {
             Edge e = pq.delMin();
-            int v = e.getV(), w = e.getW();
+            int v = e.getV(), w = e.getW(v);
             if (!UF.sameSet(v, w)) {
                 mst.enqueue(e);
                 UF.unite(v, w);

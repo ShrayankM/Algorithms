@@ -30,7 +30,7 @@ public class PrimsLazy {
         mst.enqueue(minEdge);
         minCost += minEdge.getWeight();
 //        pq.insert(minEdge);
-        int v = minEdge.getV(), w = minEdge.getW();
+        int v = minEdge.getV(), w = minEdge.getW(v);
 
         marked[v] = true;
         marked[w] = true;
@@ -41,8 +41,9 @@ public class PrimsLazy {
 //        for (Edge e : G.adj(w)) pq.insert(e);
 
         while (!pq.isEmpty()) {
+            System.out.println(pq.size());
             Edge e = pq.delMin();
-            v = e.getV(); w = e.getW();
+            v = e.getV(); w = e.getW(v);
             if (marked[v] && marked[w]) continue;
             mst.enqueue(e);
             minCost += e.getWeight();
