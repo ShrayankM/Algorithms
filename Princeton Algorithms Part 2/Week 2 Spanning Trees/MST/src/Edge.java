@@ -14,8 +14,10 @@ public class Edge implements Comparable<Edge> {
         return v;
     }
 
-    public int getW() {
-        return w;
+    public int getW(int vertex) {
+        if (vertex == v) return w;
+        else return v;
+//        return w;
     }
 
     public double getWeight() {

@@ -31,7 +31,7 @@ public class EdgeWeightedGraph {
     }
 
     public void addEdge(Edge e) {
-        int v = e.getV(), w = e.getW();
+        int v = e.getV(), w = e.getW(v);
         adj[v].add(e);
         adj[w].add(e);
     }

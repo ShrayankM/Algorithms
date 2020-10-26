@@ -7,6 +7,7 @@ public class Main {
         String filename = args[0];
         In inOne = new In(filename);
         In inTwo = new In(filename);
+        In inThree = new In(filename);
 
         System.out.println("------------------------------ KRUSKAL'S OUTPUT ------------------------------");
         KruskalAlgorithm ka = new KruskalAlgorithm(inOne);
@@ -15,7 +16,7 @@ public class Main {
             System.out.println(e);
         }
         System.out.println(ka.minCost());
-        System.out.println("------------------------------ PRIMS OUTPUT ------------------------------");
+        System.out.println("------------------------------ PRIMS LAZY OUTPUT ------------------------------");
 
         PrimsLazy pa = new PrimsLazy(inTwo);
 
@@ -23,29 +24,11 @@ public class Main {
             System.out.println(e);
         }
         System.out.println(pa.minCost());
-//        Integer [] arr = {12, 6, 64, 4, 17, 56};
-//        MinPQ<Integer> pq = new MinPQ<>();
-//
-//        for (int i = 0; i < arr.length; i++) {
-//            pq.insert(arr[i]);
-//        }
-//
-//        System.out.println(pq.delMin());
-//        System.out.println(pq.delMin());
-//        System.out.println(pq.delMin());
-//        System.out.println(pq.delMin());
-//        System.out.println(pq.delMin());
-//        System.out.println(pq.delMin());
-//
-//        System.out.println(pq.isEmpty());
-//
-//        for (int i = 0; i < arr.length; i++) {
-//            pq.insert(arr[i]);
-//        }
-//
-//        for (int value : pq) {
-//            System.out.print(value + " ");
-//        }
-//        System.out.println();
+
+        System.out.println("------------------------------ PRIMS EAGER OUTPUT ------------------------------");
+        PrimsEager pe = new PrimsEager(inThree);
+
+        pe.viewEdgeTo();
+        System.out.println(pe.minCost());
     }
 }

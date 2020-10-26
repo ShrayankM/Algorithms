@@ -38,6 +38,10 @@ public class MinPQ<Item> implements Iterable<Item> {
 
     }
 
+    public int size() {
+        return index;
+    }
+
     public boolean isEmpty() {
         return index == 1;
     }
