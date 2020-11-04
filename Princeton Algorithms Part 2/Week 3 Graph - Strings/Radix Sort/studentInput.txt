@@ -1,0 +1,10 @@
+2 Jack 56
+3 Robert 75
+2 Bob 45
+1 Lewis 64
+4 Junior 78
+3 Janice 54
+2 Lance 67
+1 Jill 23
+2 Max 44
+3 Richard 77
