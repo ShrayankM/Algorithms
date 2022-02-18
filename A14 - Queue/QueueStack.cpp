@@ -29,7 +29,7 @@ struct Q{
 
 int main(){
     struct Q q;
-    int A[] = {23, 6, 78, 65};
+    int A[] = {23, 6, 78, 65, 99};
     int N = sizeof(A)/sizeof(int);
 
     for(int i = 0; i < N; i++)
